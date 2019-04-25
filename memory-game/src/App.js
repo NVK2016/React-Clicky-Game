@@ -38,6 +38,11 @@ class App extends Component {
       // Shuffle Array.
       this.handleShuffleArray(avengersList);
       this.setState({avengersList: shuffledArray});
+      //Reset the Game 
+      this.setState ({
+        score: 0, 
+        clickedAvengerIds: []
+    })
 
     }
   }
