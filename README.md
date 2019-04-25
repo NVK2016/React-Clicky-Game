@@ -41,9 +41,10 @@ This is a memory game using React.
 
 ## Screenshots 
 <hr/> 
-![Welcome Page](https://)
 
-![Welcome Page]()
+![Welcome Page](https://github.com/NVK2016/React-Clicky-Game/blob/master/Screenshots/Welcome.png?raw=true)
+
+![Score Page](https://github.com/NVK2016/React-Clicky-Game/blob/master/Screenshots/ScoreCard.png?raw=true)
 
 ### Owner 
 Namita Shenai 
