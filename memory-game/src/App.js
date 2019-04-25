@@ -41,13 +41,16 @@ class App extends Component {
         clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
         //Increment Score 
         score: this.state.score + 1,
+        // topScore: this.state.score + 1,
         //Display Message 
         message: 'You guessed it correctly'
       });
-
+      console.log("Score", this.state.score);
+      console.log("TopScore", this.state.topScore);
       
       //scorer is 12 you win th game 
       if (this.state.score + 1 === 12) {
+        
         this.setState({
           topScore: this.state.score + 1, 
           message: 'Congratulations!! You won click image to reset the game'
@@ -64,8 +67,8 @@ class App extends Component {
 
       }
       // set topscore = score if score>topscore.
-      else if (this.state.score > this.state.topScore) {
-        this.setState({ topScore: this.state.score });
+      else if (this.state.score + 1 > this.state.topScore) {
+        this.setState({ topScore: this.state.score + 1});
       }
 
     }
@@ -88,7 +91,7 @@ class App extends Component {
           topScore={this.state.topScore}
           message={this.state.message} />
 
-        <div className="container-fluid col-8 p-5 justify-content-center">
+        <div className="container-fluid justify-content-center">
           <h3 className="text-center text-danger">Try not to click the same image twice!</h3>
           {/* Loop through all the items in the static list  */}
           {this.state.avengersList.map(avenger => (
