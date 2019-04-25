@@ -1,23 +1,14 @@
 import React from 'react';
-import logo from '../../logo.json';
 import './style.css';
 
 function Navbar(props) {
     return (
        <div>
-          <div className="container-fluid">
-             <div className="row">
-                <div className="col-3">
-                   <div>Memory Test Game</div>
-                </div>
-                <div className="col-6" id="game-message">
-                   <div>{props.message}</div>
-                </div>
-                <div className="col-3" id="game-score">
-                   <div>Score: {props.score} | Top Score: {props.topScore}</div>
-                </div>
-             </div>
-          </div>
+          <nav className="navbar sticky-top navbar-dark">
+            <h2 classNamee="title col-4 text-center">Memory Game</h2>
+            <h4 className="col-4 text-center">Click an image to begin! </h4>
+            <h2 className="text-light col-4 text-center">Score: {props.score} | Top Score: {props.topScore}</h2>
+          </nav>
        </div>
     );
  }
