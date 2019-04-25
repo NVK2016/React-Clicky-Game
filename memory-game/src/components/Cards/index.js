@@ -1,10 +1,10 @@
 import React from "react";
+import './style.css';
 
 function Card(props) {
     return (
         <img className="rounded-circle" type="button" 
-        
-        style={{width: "200px", height: "200px"}}/>
+        alt={props.name} src={props.image} onClick={() => props.id} />
     );
 }
 

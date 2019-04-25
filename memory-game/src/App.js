@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./components/Navbar";
 import MemoryCard from "./components/Cards";
-import avengerCharacters from "./avengers.json";
+import avengersList from "./avengersList.json";
 
 class App extends Component {
 
