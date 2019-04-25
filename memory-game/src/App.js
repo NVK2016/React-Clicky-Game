@@ -21,6 +21,34 @@ class App extends Component {
     let shuffledArray = this.handleShuffleArray(avengersList);
     this.setState({ avengersList: shuffledArray });
 
+    //Increment Score 
+    this.setState({
+      clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
+      //Increment Score 
+      score: this.state.score + 1
+    });
+
+     
+    //scorer is 12 you win th game 
+    if (this.state.score + 1 === 12) {
+      this.setState({
+        topScore: this.state.score + 1
+      });
+      // Shuffle Array.
+      this.handleShuffleArray(avengersList);
+      this.setState({ avengersList: shuffledArray });
+      //Reset the Game 
+      this.setState({
+        score: 0,
+        clickedAvengerIds: []
+      })
+
+    }
+    // set topscore = score if score>topscore.
+    else if (this.state.score > this.state.topScore) {
+     this.setState({ topScore: this.state.score });
+   }
+
   }
   //Function to shuffle opictures when clicked 
   handleShuffleArray = avengersList => {
