@@ -5,46 +5,22 @@ import avengersList from "./avengersList.json";
 
 class App extends Component {
 
+
+
   state = {
     // Setting this.state.avengersList to the avengers json array
     avengersList,
-    clickedAvengerIds: [], 
-    score : 0,
+    clickedAvengerIds: [],
+    score: 0,
     topScore: 0
   }
 
   //Main logic for the GAME score & reshuffling pictures 
   handleClickPicture = id => {
     // Arrange the pictures in a random manner
-    const shuffledArray = this.handleShuffleArray(avengersList);
-    this.setState({avengersList: shuffledArray});
+    let shuffledArray = this.handleShuffleArray(avengersList);
+    this.setState({ avengersList: shuffledArray });
 
-    this.setState({
-      clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
-      //Increment Score 
-      score: this.state.score + 1,
-      // message: "Correct!!"
-    });
-
-    // set topscore = score if score>topscore.
-    if (this.state.score > this.state.topScore) {
-      this.setState({ topScore: this.state.score });
-    }
-    //scorer is 12 you win th game 
-    else if (this.state.score + 1 === 12){
-      this.setState({
-        topScore: this.state.score + 1
-      });
-      // Shuffle Array.
-      this.handleShuffleArray(avengersList);
-      this.setState({avengersList: shuffledArray});
-      //Reset the Game 
-      this.setState ({
-        score: 0, 
-        clickedAvengerIds: []
-    })
-
-    }
   }
   //Function to shuffle opictures when clicked 
   handleShuffleArray = avengersList => {
@@ -59,25 +35,28 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar 
-        score={this.state.score}
-        topScore={this.state.topScore}/>
+        <NavBar
+          score={this.state.score}
+          topScore={this.state.topScore} />
 
         <div className="col-8 m-5 justify-content-center">
-        <h3>Try not to click the same image twice!</h3>
-        {/* Loop through all the items in the static list  */}
-        {this.state.avengersList.map(avenger => (
-          <MemoryCard
-            id={avenger.id}
-            key={avenger.id}
-            name={avenger.name}
-            image={avenger.image}
-            clickPicture = {this.handleClickPicture}
-          />
+          <h3>Try not to click the same image twice!</h3>
+          {/* Loop through all the items in the static list  */}
+          {this.state.avengersList.map(avenger => (
+            <MemoryCard
+              id={avenger.id}
+              key={avenger.id}
+              name={avenger.name}
+              image={avenger.image}
+              // onclick call the handle event to calculate score & shuffle array 
+              clickPicture={this.handleClickPicture}
+            />
           ))}
         </div>
         <footer>
-          <p className="text-muted text-center"> You can find the code<a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank"> here</a></p>
+          <center>
+            <a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank" >Click here for the code </a>
+          </center>
         </footer>
       </div>
     );
