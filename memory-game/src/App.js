@@ -12,7 +12,8 @@ class App extends Component {
     avengersList,
     clickedAvengerIds: [],
     score: 0,
-    topScore: 0
+    topScore: 0, 
+    message: "Click an image to begin!"
   }
 
   //Main logic for the GAME score & reshuffling pictures 
@@ -21,34 +22,48 @@ class App extends Component {
     let shuffledArray = this.handleShuffleArray(avengersList);
     this.setState({ avengersList: shuffledArray });
 
-    //Increment Score 
-    this.setState({
-      clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
-      //Increment Score 
-      score: this.state.score + 1
-    });
+    //Check if the image is clicked twice 
+    if (this.state.clickedAvengerIds.includes(id)){
+      // this.state.message = 'You guessed incorrectly! '; 
+      console.log('Game Over reset values ')
+      this.setState({ clickedAvengerIds: [], score: 0 , message:'You guessed incorrectly! '}); 
+      return;
 
-     
-    //scorer is 12 you win th game 
-    if (this.state.score + 1 === 12) {
+    }else { 
+      //Update the state with updated values 
       this.setState({
-        topScore: this.state.score + 1
+        //Add clicked picture to the array 
+        clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
+        //Increment Score 
+        score: this.state.score + 1,
+        //Display Message 
+        message: 'You guessed it correctly'
       });
-      // Shuffle Array.
-      this.handleShuffleArray(avengersList);
-      this.setState({ avengersList: shuffledArray });
-      //Reset the Game 
-      this.setState({
-        score: 0,
-        clickedAvengerIds: []
-      })
+
+      
+      //scorer is 12 you win th game 
+      if (this.state.score + 1 === 12) {
+        this.setState({
+          topScore: this.state.score + 1, 
+          message: 'You guessed it correctly'
+        });
+        // Shuffle Array.
+        this.handleShuffleArray(avengersList);
+        this.setState({ avengersList: shuffledArray });
+        //Reset the Game 
+        this.setState({
+          score: 0,
+          clickedAvengerIds: [],
+          message: "Click an image to begin!"
+        })
+
+      }
+      // set topscore = score if score>topscore.
+      else if (this.state.score > this.state.topScore) {
+      this.setState({ topScore: this.state.score });
+    }
 
     }
-    // set topscore = score if score>topscore.
-    else if (this.state.score > this.state.topScore) {
-     this.setState({ topScore: this.state.score });
-   }
-
   }
   //Function to shuffle opictures when clicked 
   handleShuffleArray = avengersList => {
@@ -65,7 +80,8 @@ class App extends Component {
       <div>
         <NavBar
           score={this.state.score}
-          topScore={this.state.topScore} />
+          topScore={this.state.topScore}
+          message={this.state.message} />
 
         <div className="col-8 m-5 justify-content-center">
           <h3>Try not to click the same image twice!</h3>
