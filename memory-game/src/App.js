@@ -3,9 +3,14 @@ import NavBar from "./components/Navbar";
 import MemoryCard from "./components/Cards";
 import avengersList from "./avengersList.json";
 
+const footStyle = {
+  "background-color":"#4B0082",
+  color: "whitesmoke ", 
+  height: "60px", 
+  bottom: "0"
+};
+
 class App extends Component {
-
-
 
   state = {
     // Setting this.state.avengersList to the avengers json array
@@ -45,7 +50,7 @@ class App extends Component {
       if (this.state.score + 1 === 12) {
         this.setState({
           topScore: this.state.score + 1, 
-          message: 'You guessed it correctly'
+          message: 'Congratulations!! You won click image to reset the game'
         });
         // Shuffle Array.
         this.handleShuffleArray(avengersList);
@@ -60,8 +65,8 @@ class App extends Component {
       }
       // set topscore = score if score>topscore.
       else if (this.state.score > this.state.topScore) {
-      this.setState({ topScore: this.state.score });
-    }
+        this.setState({ topScore: this.state.score });
+      }
 
     }
   }
@@ -83,8 +88,8 @@ class App extends Component {
           topScore={this.state.topScore}
           message={this.state.message} />
 
-        <div className="col-8 m-5 justify-content-center">
-          <h3>Try not to click the same image twice!</h3>
+        <div className="container-fluid col-8 p-5 justify-content-center">
+          <h3 className="text-center text-danger">Try not to click the same image twice!</h3>
           {/* Loop through all the items in the static list  */}
           {this.state.avengersList.map(avenger => (
             <MemoryCard
@@ -97,9 +102,9 @@ class App extends Component {
             />
           ))}
         </div>
-        <footer>
+        <footer style={footStyle}>
           <center>
-            <a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank" >Click here for the code </a>
+            <a href="https://github.com/NVK2016/React-Clicky-Game" className="text-light" target="_blank" >Click here for the code </a>
           </center>
         </footer>
       </div>
