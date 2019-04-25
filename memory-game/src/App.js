@@ -13,6 +13,32 @@ class App extends Component {
     topScore: 0
   }
 
+  //Main logic for the GAME score & reshuffling pictures 
+  handleClickPicture = id => {
+    // Arrange the pictures in a random manner
+    const shuffledArray = this.shuffleArray(avengersList);
+    this.setState({avengersList: shuffledArray});
+
+    this.setState({
+    clickedArray: this.state.clickedArray.concat([id]),
+    score: this.state.score + 1,
+    message: "Correct!!"
+    });
+
+    // set topscore = score if score>topscore.
+    if (this.state.score > this.state.topScore) {
+      this.setState({ topScore: this.state.score });
+    }
+  }
+  //Function to shuffle opictures when clicked 
+  shuffleArray = avengersList => {
+    for (let i = avengersList.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+      [avengersList[i], avengersList[j]] = [avengersList[j], avengersList[i]]; // swap elements
+    }
+    return avengersList;
+  }
+
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
@@ -30,7 +56,7 @@ class App extends Component {
             key={avenger.id}
             name={avenger.name}
             image={avenger.image}
-            onClick={handleScoreCount}
+            clickPicture = {this.handleClickPicture}
           />
           ))}
         </div>
