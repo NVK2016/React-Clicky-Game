@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <div className="container-fluid">
+        <div className="col-8 m-5 justify-content-center">
         {/* Loop through all the items in the static list  */}
         {this.state.avengersList.map(avenger => (
           <MemoryCard
@@ -28,6 +28,7 @@ class App extends Component {
           />
           ))}
         </div>
+
       </div>
     );
   }
