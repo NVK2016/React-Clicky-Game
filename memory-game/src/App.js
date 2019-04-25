@@ -20,9 +20,9 @@ class App extends Component {
     this.setState({avengersList: shuffledArray});
 
     this.setState({
-    clickedArray: this.state.clickedArray.concat([id]),
-    score: this.state.score + 1,
-    message: "Correct!!"
+      clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
+      score: this.state.score + 1,
+      // message: "Correct!!"
     });
 
     // set topscore = score if score>topscore.
@@ -44,8 +44,8 @@ class App extends Component {
     return (
       <div>
         <NavBar 
-        score = {this.state.score}
-        topScore = {this.state.topScore}/>
+        score={this.state.score}
+        topScore={this.state.topScore}/>
 
         <div className="col-8 m-5 justify-content-center">
         <h3>Try not to click the same image twice!</h3>
@@ -61,9 +61,7 @@ class App extends Component {
           ))}
         </div>
         <footer>
-          <p> You can find the
-          code<a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank"> here</a>.
-          </p>
+          <p> You can find the code<a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank"> here</a></p>
         </footer>
       </div>
     );
