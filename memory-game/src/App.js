@@ -18,9 +18,15 @@ class App extends Component {
       <div>
         <NavBar />
         <div className="container-fluid">
+        {/* Loop through all the items in the static list  */}
+        {this.state.avengersList.map(avenger => (
           <MemoryCard
-            // key={avengerCharacters.id}
+            id={avenger.id}
+            key={avenger.id}
+            name={avenger.name}
+            image={avenger.image}
           />
+          ))}
         </div>
       </div>
     );
