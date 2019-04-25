@@ -16,11 +16,12 @@ class App extends Component {
   //Main logic for the GAME score & reshuffling pictures 
   handleClickPicture = id => {
     // Arrange the pictures in a random manner
-    const shuffledArray = this.shuffleArray(avengersList);
+    const shuffledArray = this.handleShuffleArray(avengersList);
     this.setState({avengersList: shuffledArray});
 
     this.setState({
       clickedAvengerIds: this.state.clickedAvengerIds.concat([id]),
+      //Increment Score 
       score: this.state.score + 1,
       // message: "Correct!!"
     });
@@ -29,9 +30,19 @@ class App extends Component {
     if (this.state.score > this.state.topScore) {
       this.setState({ topScore: this.state.score });
     }
+    //scorer is 12 you win th game 
+    else if (this.state.score + 1 === 12){
+      this.setState({
+        topScore: this.state.score + 1
+      });
+      // Shuffle Array.
+      this.handleShuffleArray(avengersList);
+      this.setState({avengersList: shuffledArray});
+
+    }
   }
   //Function to shuffle opictures when clicked 
-  shuffleArray = avengersList => {
+  handleShuffleArray = avengersList => {
     for (let i = avengersList.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
       [avengersList[i], avengersList[j]] = [avengersList[j], avengersList[i]]; // swap elements
@@ -61,7 +72,7 @@ class App extends Component {
           ))}
         </div>
         <footer>
-          <p> You can find the code<a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank"> here</a></p>
+          <p className="text-muted text-center"> You can find the code<a href="https://github.com/NVK2016/React-Clicky-Game" target="_blank"> here</a></p>
         </footer>
       </div>
     );
