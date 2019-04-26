@@ -50,19 +50,18 @@ class App extends Component {
       
       //scorer is 12 you win th game 
       if (this.state.score + 1 === 12) {
-        
-        this.setState({
-          topScore: this.state.score + 1, 
-          message: 'Congratulations!! You won click image to reset the game'
-        });
         // Shuffle Array.
         this.handleShuffleArray(avengersList);
         this.setState({ avengersList: shuffledArray });
-        //Reset the Game 
+        
+        //Reset th Game & values 
         this.setState({
+          topScore: this.state.score + 1, 
+          message: 'Congratulations!! You won click image to reset the game',
+          //Reset the Game 
           score: 0,
           clickedAvengerIds: [],
-          message: "Click an image to begin!"
+          // message: "Click an image to begin!"
         })
 
       }
@@ -91,7 +90,7 @@ class App extends Component {
           topScore={this.state.topScore}
           message={this.state.message} />
 
-        <div className="container-fluid justify-content-center">
+        <div className="container-fluid p-2 col-9 justify-content-center">
           <h3 className="text-center text-danger">Try not to click the same image twice!</h3>
           {/* Loop through all the items in the static list  */}
           {this.state.avengersList.map(avenger => (
@@ -106,8 +105,8 @@ class App extends Component {
           ))}
         </div>
         <footer style={footStyle}>
-          <center>
-            <a href="https://github.com/NVK2016/React-Clicky-Game" className="text-light" target="_blank" >Click here for the code </a>
+          <center className="p-3">
+            <a href="https://github.com/NVK2016/React-Clicky-Game" className="text-light" target="_blank" rel="noopener noreferrer" >Click here for the code </a>
           </center>
         </footer>
       </div>
