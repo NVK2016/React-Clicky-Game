@@ -37,7 +37,7 @@ This is a memory game using React.
 
 ## Deployed Link 
 <hr/> 
-<a href="#">Memory Test Game </a>
+<a href="https://nvk2016.github.io/React-Clicky-Game/">Memory Test Game </a>
 
 ## Screenshots 
 <hr/> 
