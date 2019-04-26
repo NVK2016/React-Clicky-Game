@@ -2,51 +2,51 @@
     {
         "id": 1,
         "name": "IronMan",
-        "image": "https://starbaseatlanta.com/wp-content/uploads/imatb21290.jpg"
+        "image": "images/IronMan.jpg"
     },
     {
         "id": 2,
         "name": "TheHulk",
-        "image": "https://www.androidred.com/wp-content/uploads/2016/08/Hulk-Android-Wallpaper.png"
+        "image": "images/Hulk-Android-Wallpaper.png"
     },{
         "id": 3,
         "name": "CaptainAmerica",
-        "image": "https://i.etsystatic.com/9651911/r/il/1ee6bb/1254904667/il_570xN.1254904667_gbym.jpg"
+        "image": "images/CaptainAmerica.jpg"
     },{
         "id": 4,
         "name": "BlackWidow",
-        "image": "https://i.pinimg.com/originals/e9/1f/a7/e91fa769b8b415666c53acdc05a31a72.jpg"
+        "image": "images/BlackWidow.jpg"
     },{
         "id": 5,
         "name": "Thor",
-        "image": "https://cdn.globalauctionplatform.com/feebf28c-c6c3-47f2-b679-a84f01034152/4aee6a8a-f29d-4260-f961-28750f1508ab/original.jpg"
+        "image": "images/TheThor.jpg"
     },{
         "id": 6,
         "name": "Thanos",
-        "image": "https://static.tvtropes.org/pmwiki/pub/images/thanos_3.jpg"
+        "image": "images/thanos_3.jpg"
     },{
         "id": 7,
         "name": "AntMan",
-        "image": "https://static01.nyt.com/images/2018/07/06/arts/06antman1-dressrefer/06antman1-dressrefer-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+        "image": "images/AntMan01.jpg"
     },{
         "id": 8,
         "name": "BlackPanther",
-        "image": "https://static.tvtropes.org/pmwiki/pub/images/blackpantherinfinitywar.png"
+        "image": "images/blackpantherinfinitywar.png"
     },{
         "id": 9,
         "name": "Gamora",
-        "image": "https://godardsletterboxes.files.wordpress.com/2014/11/guardians-of-the-galaxy-gamora-101682-101718.jpg"
+        "image": "images/gamora-101718.jpg"
     },{
         "id": 10,
         "name": "Drax",
-        "image": "https://static.tvtropes.org/pmwiki/pub/images/draxthedestroyerinfinitywar_9.png"
+        "image": "images/draxthedestroyerinfinitywar_9.png"
     },{
         "id": 11,
         "name": "RocketRacoon",
-        "image": "https://static.tvtropes.org/pmwiki/pub/images/rocketraccoonendgame.png"
+        "image": "images/rocketraccoonendgame.png"
     },{
         "id": 12,
         "name": "Star-Lord",
-        "image": "https://static.tvtropes.org/pmwiki/pub/images/starlordinfinitywar.png"
+        "image": "images/starlordinfinitywar.png"
     }
 ]
