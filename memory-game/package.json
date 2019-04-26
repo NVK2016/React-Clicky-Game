@@ -1,5 +1,6 @@
 {
   "name": "memory-game",
+  "homepage":"https://nvk2016.github.io/React-Clicky-Game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
