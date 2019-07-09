@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background-attachment: fixed; 
+  background-image: url(../images/background-pexel.jpeg);
+}

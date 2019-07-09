@@ -90,7 +90,7 @@ class App extends Component {
           topScore={this.state.topScore}
           message={this.state.message} />
 
-        <div className="container-fluid p-2 col-9 justify-content-center">
+        <div id="game-background" className="container-fluid p-2 col-9 justify-content-center">
           <h3 className="text-center text-danger">Try not to click the same image twice!</h3>
           {/* Loop through all the items in the static list  */}
           {this.state.avengersList.map(avenger => (
