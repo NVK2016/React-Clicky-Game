@@ -18,7 +18,8 @@ class App extends Component {
     clickedAvengerIds: [],
     score: 0,
     topScore: 0, 
-    message: "Click an image to begin!"
+    message: "Click an image to begin!",
+    animate: "animated swing"
   }
 
   //Main logic for the GAME score & reshuffling pictures 
@@ -101,6 +102,7 @@ class App extends Component {
               image={avenger.image}
               // onclick call the handle event to calculate score & shuffle array 
               clickPicture={this.handleClickPicture}
+              animate={!this.state.score && this.state.topScore}
             />
           ))}
         </div>

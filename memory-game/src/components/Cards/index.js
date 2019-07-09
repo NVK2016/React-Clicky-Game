@@ -3,9 +3,9 @@ import './style.css';
 
 function Card(props) {
     return (
-
-        <img className="rounded-circle m-3 hover11 column" type="button" 
-        alt={props.name} src={props.image}  onClick={() => props.clickPicture(props.id)}/>
+        //in case the value is incorrect wobble the icons 
+        <img className= {`rounded-circle m-3 hover11 column  ${props.animate? "animated wobble": ""}`} type="button" 
+        alt={props.name} src={props.image}  onClick={() => props.clickPicture(props.id)} />
     );
 }
 
